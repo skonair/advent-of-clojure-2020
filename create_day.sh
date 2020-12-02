@@ -7,7 +7,7 @@ fi
 
 cat >src/aoc_2020/day$1.clj <<EOL
 (ns aoc-2020.day$1
-  (require [clojure.string :as str]))
+  (:require [clojure.string :as str]))
 
 ; your code here
 (defn part1 []
