@@ -28,6 +28,23 @@
     (for [move-pattern [[1 1] [3 1] [5 1] [7 1] [1 2]]]
       (count-trees lines move-pattern))))
 
+; solution inspired/stolen from deen13
+(defn- deen-function [lines [dx dy]]
+  (count 
+    (filter 
+      #(= % \#) 
+      (map-indexed 
+        (fn [i l] (nth l (mod (* dx i) 31))) 
+        (take-nth dy lines)))))
+
+(defn part1-deen [lines]
+  (deen-function lines [3 1]))
+
+(defn part2-deen [lines]
+  (apply *
+    (for [mp [[1 1] [3 1] [5 1] [7 1] [1 2]]]
+      (deen-function lines mp))))
+
 (def lines (str/split-lines (slurp "resources/day03_input.txt")))
 
 (println "Day 03 - 1: " (part1 input)) ; 294
