@@ -32,5 +32,5 @@
         highest (apply max lines)]
     (sort (conj (conj lines 0) (+ 3 highest)))))
 
-(println "Day 10 - 1: " (part1 input)) ; 2470
-(println "Day 10 - 2: " (part2 input)) ; 1973822685184
+(println "Day 10 - 1: " (part1 lines)) ; 2470
+(println "Day 10 - 2: " (part2 lines)) ; 1973822685184
