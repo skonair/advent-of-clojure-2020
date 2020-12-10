@@ -12,8 +12,8 @@
 (def count-distinct-ways
   (memoize
     (fn [lines pos n]
-      (if (>= pos (count lines))
-        1 ; the complete path
+      (if (= pos (count lines))
+        1 ; one successful way
         (let [previous (nth lines (dec pos))
               current (nth lines pos)
               nn (+ n (- current previous))]
